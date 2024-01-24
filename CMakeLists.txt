@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.16.3 FATAL_ERROR)
+project(mariadb)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_SHARED_LIBRARY_PREFIX "")
+add_library(mariadb SHARED mariadb.cpp)
+if(UNIX)
+  include_directories(/opt/zuko/include)
+endif()
+if(WIN32)
+  include_directories(C:\\zuko\\include)
+endif()
+
