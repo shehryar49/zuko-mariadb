@@ -5,7 +5,7 @@
 #include "mariadb.h"
 #include <string>
 #include <stdlib.h>
-#include <mysql.h> //you can change this to path where
+#include <mysql/mysql.h> //you can change this to path where
 //your libmariadb-dev headers are placed
 
 using namespace std;
