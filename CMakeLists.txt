@@ -9,8 +9,12 @@ if(UNIX)
   find_package(PkgConfig REQUIRED)
   pkg_check_modules(mariadb REQUIRED IMPORTED_TARGET "mariadb")
   target_link_libraries(mariadb PUBLIC PkgConfig::mariadb)
+  target_link_directories(mariadb PRIVATE /opt/zuko/lib)
 endif()
 if(WIN32)
   include_directories(C:\\zuko\\include)
+  target_link_directories(mariadb PRIVATE C:\\zuko\\lib)
 endif()
+
+target_link_libraries(mariadb PRIVATE -lzapi)
 
